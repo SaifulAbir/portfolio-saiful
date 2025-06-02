@@ -3,7 +3,7 @@ import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 // import { About } from '@/components/About';
 // import { Skills } from '@/components/Skills';
-// import { Projects } from '@/components/Projects';
+import { Projects } from '@/components/Projects';
 // import { Timeline } from '@/components/Timeline';
 // import { Resume } from '@/components/Resume';
 // import { Contact } from '@/components/Contact';
@@ -23,11 +23,11 @@ export default function Home() {
         </section>
         <section id="skills" className="mb-24">
           <Skills data={data.skills} />
-        </section>
+        </section> */}
         <section id="projects" className="mb-24">
           <Projects data={data.projects} />
         </section>
-        <section id="timeline" className="mb-24">
+        {/* <section id="timeline" className="mb-24">
           <Timeline data={data.timeline} />
         </section>
         <section id="resume" className="mb-24">

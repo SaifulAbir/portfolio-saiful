@@ -1,0 +1,86 @@
+{
+    "hero": {
+      "name": "Saiful Islam",
+      "title": "Software Engineer | Full-Stack Developer",
+      "description": "Building innovative and scalable web solutions.",
+      "cta": "Download Resume",
+      "socialLinks": {
+        "github": "https://github.com/your-username",
+        "linkedin": "https://www.linkedin.com/in/your-username",
+        "gitlab": "https://gitlab.com/your-username"
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "bio": "I am a passionate software engineer with a strong background in building robust and user-friendly applications. My expertise lies in front-end development with Next.js and back-end services with Node.js, combined with a keen eye for design and user experience. I thrive on solving complex problems and continuously learning new technologies.",
+      "profileImage": "/profile.jpg"
+    },
+    "skills": {
+      "title": "My Tech Stack",
+      "categories": [
+        {
+          "name": "Frontend",
+          "technologies": ["Next.js", "React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "shadcn/ui", "Framer Motion"]
+        },
+        {
+          "name": "Backend",
+          "technologies": ["Node.js", "Express.js", "Python", "Django", "FastAPI"]
+        },
+        {
+          "name": "Databases",
+          "technologies": ["PostgreSQL", "MongoDB", "MySQL"]
+        },
+        {
+          "name": "Tools & DevOps",
+          "technologies": ["Git", "GitHub", "GitLab", "Docker", "Netlify", "Vercel", "AWS"]
+        }
+      ]
+    },
+    "projects": [
+      {
+        "id": "project-1",
+        "title": "Interactive Developer Portfolio",
+        "description": "A modern, interactive, and visually polished portfolio website built with Next.js, shadcn/ui, and Framer Motion.",
+        "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
+        "githubLink": "https://github.com/your-username/your-portfolio",
+        "liveLink": "https://your-portfolio.netlify.app/",
+        "image": "/images/project1.png"
+      },
+      {
+        "id": "project-2",
+        "title": "E-commerce Platform",
+        "description": "Full-stack e-commerce application with user authentication, product catalog, and payment integration.",
+        "techStack": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+        "githubLink": "https://github.com/your-username/ecommerce-platform",
+        "liveLink": "https://ecommerce-demo.com/",
+        "image": "/images/project2.png"
+      }
+    ],
+    "timeline": {
+      "title": "Career Journey",
+      "events": [
+        {
+          "id": "event-1",
+          "date": "Jan 2023 - Present",
+          "title": "Software Engineer",
+          "company": "Tech Innovations Inc.",
+          "description": "Developed and maintained scalable web applications, contributing to both front-end and back-end services."
+        },
+        {
+          "id": "event-2",
+          "date": "June 2021 - Dec 2022",
+          "title": "Junior Developer",
+          "company": "Web Solutions Co.",
+          "description": "Assisted in the development of client websites using modern web technologies."
+        }
+      ]
+    },
+    "contact": {
+      "email": "your.email@example.com",
+      "socialLinks": {
+        "github": "https://github.com/your-username",
+        "linkedin": "https://www.linkedin.com/in/your-username",
+        "twitter": "https://twitter.com/your-username"
+      }
+    }
+}

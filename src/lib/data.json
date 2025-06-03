@@ -2,12 +2,13 @@
     "hero": {
       "name": "Saiful Islam",
       "title": "Software Engineer | Full-Stack Developer",
+      "profileImage": "/profile.jpg",
       "description": "Building innovative and scalable web solutions.",
       "cta": "Download Resume",
       "socialLinks": {
-        "github": "https://github.com/your-username",
-        "linkedin": "https://www.linkedin.com/in/your-username",
-        "gitlab": "https://gitlab.com/your-username"
+        "github": "https://github.com/SaifulAbir",
+        "linkedin": "https://www.linkedin.com/in/saifulislamcse",
+        "gitlab": "https://gitlab.com/saiful-cse"
       }
     },
     "about": {
@@ -82,5 +83,36 @@
         "linkedin": "https://www.linkedin.com/in/your-username",
         "twitter": "https://twitter.com/your-username"
       }
+    },
+    "education": {
+      "title": "Education",
+      "institutions": [
+        {
+          "degree": "Bachelor of Science in Computer Science",
+          "institution": "University of Technology",
+          "location": "New York, NY",
+          "period": "2018 - 2022",
+          "description": "Focused on software engineering, algorithms, and system design...",
+          "achievements": [
+            "Dean's List for 6 consecutive semesters",
+            "President of Computer Science Society",
+            "Winner of Annual Hackathon 2021"
+          ],
+          "gpa": "3.8/4.0"
+        },
+        {
+          "degree": "Bachelor of Science in Computer Science",
+          "institution": "University of Technology",
+          "location": "New York, NY",
+          "period": "2018 - 2022",
+          "description": "Focused on software engineering, algorithms, and system design...",
+          "achievements": [
+            "Dean's List for 6 consecutive semesters",
+            "President of Computer Science Society",
+            "Winner of Annual Hackathon 2021"
+          ],
+          "gpa": "3.8/4.0"
+        }
+      ]
     }
 }

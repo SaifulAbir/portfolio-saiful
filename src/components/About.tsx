@@ -1,9 +1,8 @@
 // src/components/About.tsx
 'use client';
-
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Code, Database, Palette, Zap, Users, Trophy, Star, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from './ui/card';
+import { Code, Database, Palette, Zap, ArrowRight } from 'lucide-react';
 
 interface AboutProps {
     data: {
@@ -42,14 +41,6 @@ export function About({ data }: AboutProps) {
             description: "Optimizing for speed and efficiency",
             color: "from-amber-500 to-orange-500"
         }
-    ];
-
-    // Personal stats/achievements
-    const stats = [
-        { number: "50+", label: "Projects Completed", icon: Trophy },
-        { number: "5+", label: "Years Experience", icon: Star },
-        { number: "20+", label: "Happy Clients", icon: Users },
-        { number: "99%", label: "Client Satisfaction", icon: Zap }
     ];
 
     const containerVariants = {
@@ -189,7 +180,7 @@ export function About({ data }: AboutProps) {
                                     transition={{ duration: 0.6, delay: 0.8 }}
                                     className="mt-8 flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold cursor-pointer group"
                                 >
-                                    <span>Let's build something amazing together</span>
+                                    <span>Let&apos;s build something amazing together</span>
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                                 </motion.div>
                             </CardContent>
@@ -245,7 +236,7 @@ export function About({ data }: AboutProps) {
                     {/* Right Side - Highlights Grid */}
                     <motion.div variants={itemVariants} className="space-y-6">
                         <div className="grid gap-6">
-                            {highlights.map((highlight, index) => (
+                            {highlights.map((highlight) => (
                                 <motion.div
                                     key={highlight.title}
                                     variants={cardVariants}

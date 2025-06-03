@@ -22,7 +22,7 @@ export function Skills({ data }: SkillsProps) {
 
     // Icon mapping for different categories
     const getCategoryIcon = (categoryName: string) => {
-        const iconMap: { [key: string]: any } = {
+        const iconMap: { [key: string]: React.ComponentType } = {
             'Frontend': Code,
             'Backend': Server,
             'Database': Database,

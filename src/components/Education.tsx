@@ -3,7 +3,7 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from './ui/card';
-import { GraduationCap, Calendar, MapPin, Award, Star, ArrowRight } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, Star } from 'lucide-react';
 
 interface EducationProps {
     data: {
@@ -30,19 +30,6 @@ export function Education({ data }: EducationProps) {
             transition: {
                 staggerChildren: 0.15,
                 delayChildren: 0.1,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { y: 30, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: 'spring',
-                stiffness: 100,
-                damping: 12,
             },
         },
     };

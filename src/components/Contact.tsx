@@ -7,7 +7,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Mail, Github, Linkedin, Twitter, Send, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, Send, MapPin, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -167,7 +167,7 @@ export function Contact({ data }: ContactProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-slate-600 dark:text-slate-400 mt-6 text-lg max-w-2xl mx-auto"
                     >
-                        Let's collaborate and bring your ideas to life. I'm always excited to work on new projects and connect with fellow developers.
+                        Let&apos;s collaborate and bring your ideas to life. I&apos;m always excited to work on new projects and connect with fellow developers.
                     </motion.p>
                 </motion.div>
 
@@ -303,13 +303,13 @@ export function Contact({ data }: ContactProps) {
                                 <CardHeader className="relative z-10">
                                     <CardTitle className="text-2xl font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
                                         <Mail className="h-6 w-6 text-indigo-600" />
-                                        Let's Connect
+                                        Let&apos;s Connect
                                     </CardTitle>
                                 </CardHeader>
 
                                 <CardContent className="p-6 pt-0 relative z-10">
                                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                        I'm always interested in hearing about new opportunities, creative projects, and innovative ideas. Whether you have a question or just want to say hi, I'll do my best to get back to you!
+                                        I&apos;m always interested in hearing about new opportunities, creative projects, and innovative ideas. Whether you have a question or just want to say hi, I&apos;ll do my best to get back to you!
                                     </p>
 
                                     <div className="space-y-4">

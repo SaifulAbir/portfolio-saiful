@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Github, Linkedin, Gitlab, Download, MapPin, Trophy, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 interface HeroProps {

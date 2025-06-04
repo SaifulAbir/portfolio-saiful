@@ -19,30 +19,43 @@ interface HeroProps {
             linkedin: string;
             gitlab: string;
         };
+        skills: string[];
+        techStack: Array<{
+            name: string;
+            color: string;
+        }>;
+        badges: {
+            experience: {
+                text: string;
+                icon: string;
+            };
+            availability: {
+                text: string;
+                icon: string;
+            };
+            location: {
+                text: string;
+                icon: string;
+            };
+        };
+        scrollIndicator: {
+            text: string;
+        };
     };
 }
 
 export function Hero({ data }: HeroProps) {
-    const { name, description, cta, socialLinks, profileImage } = data;
-
-    // Consolidated skills with more specific and varied expertise
-    const skills = [
-        "Full-Stack Developer",
-        "React Specialist",
-        "Django Expert",
-        "Database Architect",
-        "API Designer",
-        "Problem Solver",
-        "UI/UX Developer"
-    ];
-
-    // Tech stack specializations
-    const techStack = [
-        { name: "Python", color: "from-blue-500 to-cyan-500" },
-        { name: "JavaScript", color: "from-green-500 to-emerald-500" },
-        { name: "TypeScript", color: "from-blue-600 to-indigo-600" },
-        { name: "React", color: "from-green-600 to-green-500" }
-    ];
+    const {
+        name,
+        description,
+        cta,
+        socialLinks,
+        profileImage,
+        skills,
+        techStack,
+        badges,
+        scrollIndicator
+    } = data;
 
     const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
 
@@ -95,7 +108,7 @@ export function Hero({ data }: HeroProps) {
                     >
                         <Trophy className="h-3 w-3 sm:h-4 sm:w-4 text-amber-500" />
                         <span className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            5+ Years Experience
+                            {badges.experience.text}
                         </span>
                     </motion.div>
                 </motion.div>
@@ -114,7 +127,7 @@ export function Hero({ data }: HeroProps) {
                     >
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                         <span className="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200">
-                            Available for opportunities
+                            {badges.availability.text}
                         </span>
                     </motion.div>
                 </motion.div>
@@ -132,7 +145,9 @@ export function Hero({ data }: HeroProps) {
                         className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg border border-white/20"
                     >
                         <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">Based in Chemnitz, Germany</span>
+                        <span className="text-sm font-semibold text-slate-700 dark:text-slate-200">
+                            {badges.location.text}
+                        </span>
                     </motion.div>
                 </motion.div>
             </>
@@ -333,7 +348,7 @@ export function Hero({ data }: HeroProps) {
                     }}
                 >
                     <span className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors duration-300 mb-2 font-medium">
-                        Scroll to explore
+                        {scrollIndicator.text}
                     </span>
                     <div className="relative">
                         {/* Enhanced glowing background */}

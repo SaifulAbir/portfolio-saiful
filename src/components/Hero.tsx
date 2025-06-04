@@ -180,7 +180,7 @@ export function Hero({ data }: HeroProps) {
                         <img
                             src={profileImage}
                             alt={`${name} Profile Picture`}
-                            className="w-full h-full object-cover object-top rounded-full scale-110"
+                            className="w-full h-full object-cover object-top rounded-full scale-105"
                             style={{ objectPosition: '45% 6%' }}
                         />
                     </div>

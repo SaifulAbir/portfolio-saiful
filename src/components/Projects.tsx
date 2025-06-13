@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion';
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
 import { Button } from './ui/button';
+import { ExpandableDescription } from './ui/ExpandableDescription';
 import { Github, Globe, Star, Calendar, Code2, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -195,50 +196,118 @@ export function Projects({ data }: ProjectsProps) {
                                     />
 
                                     {/* Project Image */}
-                                    {project.image && (
-                                        <div className="relative w-full h-48 bg-gray-200 dark:bg-gray-800 overflow-hidden">
-                                            <Image
-                                                src={project.image}
-                                                alt={project.title}
-                                                fill
-                                                style={{ objectFit: 'cover' }}
-                                                className="transition-all duration-500 group-hover:scale-110"
-                                            />
-                                            {/* Overlay on hover */}
-                                            <motion.div
-                                                initial={{ opacity: 0 }}
-                                                whileHover={{ opacity: 1 }}
-                                                className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-4"
-                                            >
-                                                <div className="flex gap-2">
-                                                    {project.githubLink && (
-                                                        <motion.div
-                                                            whileHover={{ scale: 1.1 }}
-                                                            whileTap={{ scale: 0.9 }}
-                                                        >
-                                                            <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                                                                <div className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors">
-                                                                    <Github className="h-4 w-4 text-white" />
-                                                                </div>
-                                                            </Link>
-                                                        </motion.div>
-                                                    )}
-                                                    {project.liveLink && (
-                                                        <motion.div
-                                                            whileHover={{ scale: 1.1 }}
-                                                            whileTap={{ scale: 0.9 }}
-                                                        >
-                                                            <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                                                <div className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors">
-                                                                    <ExternalLink className="h-4 w-4 text-white" />
-                                                                </div>
-                                                            </Link>
-                                                        </motion.div>
-                                                    )}
+                                    {/* Project Image */}
+                                    <div className="relative w-full h-48 overflow-hidden">
+                                        {project.image ? (
+                                            <>
+                                                <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800" />
+                                                <Image
+                                                    src={project.image}
+                                                    alt={project.title}
+                                                    fill
+                                                    style={{ objectFit: 'cover' }}
+                                                    className="transition-all duration-500 group-hover:scale-110"
+                                                />
+                                            </>
+                                        ) : (
+                                            // Beautiful fallback for projects without images
+                                            <div className={`relative w-full h-full bg-gradient-to-br ${gradientColor} flex items-center justify-center`}>
+                                                {/* Animated background pattern */}
+                                                <div className="absolute inset-0 opacity-10">
+                                                    <div className="absolute top-4 left-4 w-8 h-8 border-2 border-white rounded-full animate-pulse" />
+                                                    <div className="absolute top-8 right-6 w-4 h-4 border border-white rounded-full animate-ping" />
+                                                    <div className="absolute bottom-6 left-8 w-6 h-6 border-2 border-white rounded-full animate-bounce" />
+                                                    <div className="absolute bottom-4 right-4 w-3 h-3 bg-white rounded-full animate-pulse" />
+                                                    {/* Code-like pattern */}
+                                                    <div className="absolute top-1/3 left-1/4 w-16 h-0.5 bg-white/30 rounded" />
+                                                    <div className="absolute top-1/3 left-1/4 mt-2 w-12 h-0.5 bg-white/20 rounded" />
+                                                    <div className="absolute top-1/3 left-1/4 mt-4 w-20 h-0.5 bg-white/25 rounded" />
                                                 </div>
-                                            </motion.div>
-                                        </div>
-                                    )}
+
+                                                {/* Main icon */}
+                                                <motion.div
+                                                    animate={{
+                                                        scale: [1, 1.1, 1],
+                                                        rotate: [0, 5, -5, 0]
+                                                    }}
+                                                    transition={{
+                                                        duration: 4,
+                                                        repeat: Infinity,
+                                                        ease: "easeInOut"
+                                                    }}
+                                                    className="relative z-10 p-6 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30"
+                                                >
+                                                    <Code2 className="h-12 w-12 text-white drop-shadow-lg" />
+                                                </motion.div>
+
+                                                {/* Floating elements */}
+                                                <motion.div
+                                                    animate={{
+                                                        y: [-10, 10, -10],
+                                                        x: [-5, 5, -5]
+                                                    }}
+                                                    transition={{
+                                                        duration: 3,
+                                                        repeat: Infinity,
+                                                        ease: "easeInOut"
+                                                    }}
+                                                    className="absolute top-6 right-6 p-2 bg-white/15 backdrop-blur-sm rounded-lg"
+                                                >
+                                                    <Github className="h-4 w-4 text-white" />
+                                                </motion.div>
+
+                                                <motion.div
+                                                    animate={{
+                                                        y: [10, -10, 10],
+                                                        x: [5, -5, 5]
+                                                    }}
+                                                    transition={{
+                                                        duration: 2.5,
+                                                        repeat: Infinity,
+                                                        ease: "easeInOut",
+                                                        delay: 1
+                                                    }}
+                                                    className="absolute bottom-6 left-6 p-2 bg-white/15 backdrop-blur-sm rounded-lg"
+                                                >
+                                                    <Globe className="h-4 w-4 text-white" />
+                                                </motion.div>
+                                            </div>
+                                        )}
+
+                                        {/* Overlay on hover - now works for both image and fallback */}
+                                        <motion.div
+                                            initial={{ opacity: 0 }}
+                                            whileHover={{ opacity: 1 }}
+                                            className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end justify-center pb-4"
+                                        >
+                                            <div className="flex gap-2">
+                                                {project.githubLink && (
+                                                    <motion.div
+                                                        whileHover={{ scale: 1.1 }}
+                                                        whileTap={{ scale: 0.9 }}
+                                                    >
+                                                        <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                                            <div className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors">
+                                                                <Github className="h-4 w-4 text-white" />
+                                                            </div>
+                                                        </Link>
+                                                    </motion.div>
+                                                )}
+                                                {project.liveLink && (
+                                                    <motion.div
+                                                        whileHover={{ scale: 1.1 }}
+                                                        whileTap={{ scale: 0.9 }}
+                                                    >
+                                                        <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                                                            <div className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors">
+                                                                <ExternalLink className="h-4 w-4 text-white" />
+                                                            </div>
+                                                        </Link>
+                                                    </motion.div>
+                                                )}
+                                            </div>
+                                        </motion.div>
+                                    </div>
 
                                     <CardHeader className="flex-grow relative z-10 pb-4">
                                         <div className="flex items-start justify-between mb-2">
@@ -267,9 +336,13 @@ export function Projects({ data }: ProjectsProps) {
                                             </div>
                                         )}
 
-                                        <CardDescription className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
+                                        {/* <CardDescription className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-3">
                                             {project.description}
-                                        </CardDescription>
+                                        </CardDescription> */}
+                                        <ExpandableDescription
+                                            description={project.description}
+                                            maxLength={90}
+                                        />
 
                                         {/* Tech Stack */}
                                         <div className="flex flex-wrap gap-2">

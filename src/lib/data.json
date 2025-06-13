@@ -85,6 +85,15 @@
       "githubLink": "https://github.com/SaifulAbir/portfolio-saiful",
       "liveLink": "https://saifulislam.pro/",
       "image": "/images/project1.png"
+    },
+    {
+      "id": "project-2",
+      "title": "Bhalogari.com – Automotive Marketplace",
+      "description": "Developed a full-featured vehicle marketplace for Bangladesh with advanced search, comparison, and listing functionalities for new, used, and reconditioned cars.",
+      "techStack": ["Django", "React.js", "Django REST Framework", "PostgreSQL", "Material UI"],
+      "githubLink": "", 
+      "liveLink": "https://bhalogari.com/",
+      "image": "/images/bhalogari.png"
     }
   ],
   "timeline": {

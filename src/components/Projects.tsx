@@ -2,7 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
+import { Card, CardHeader, CardTitle, CardFooter } from './ui/card';
 import { Button } from './ui/button';
 import { ExpandableDescription } from './ui/ExpandableDescription';
 import { Github, Globe, Star, Calendar, Code2, ExternalLink } from 'lucide-react';

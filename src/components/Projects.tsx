@@ -196,7 +196,6 @@ export function Projects({ data }: ProjectsProps) {
                                     />
 
                                     {/* Project Image */}
-                                    {/* Project Image */}
                                     <div className="relative w-full h-48 overflow-hidden">
                                         {project.image ? (
                                             <>

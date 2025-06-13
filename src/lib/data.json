@@ -48,7 +48,7 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I'm a full-stack software engineer with a strong foundation in Python, JavaScript, and TypeScript, currently pursuing a Master's in Automotive Software Engineering in Chemnitz, Germany. With over four years of industry experience, I've built scalable web applications using Django, FastAPI, React, and modern DevOps tools like Docker, AWS, and CI/CD pipelines. I care deeply about clean code, system design, and delivering impactful user experiences.",
+    "bio": "I'm a full-stack software engineer with a strong foundation in Python, JavaScript, and TypeScript, currently pursuing a Master's in Automotive Software Engineering in Chemnitz, Germany. With over five years of industry experience, I've built scalable web applications using Django, FastAPI, React, and modern DevOps tools like Docker, AWS, and CI/CD pipelines. I care deeply about clean code, system design, and delivering impactful user experiences.",
     "profileImage": "/profile.jpg"
   },
   "skills": {
@@ -88,12 +88,30 @@
     },
     {
       "id": "project-2",
+      "title": "Facility Finder Chemnitz",
+      "description": "A map-based web application that helps users locate public childcare and education facilities in Chemnitz with filtering, geolocation, and JWT-based authentication.",
+      "techStack": ["Django", "Next.js", "React.js", "PostgreSQL", "JWT", "Tailwind CSS"],
+      "githubLink": "https://github.com/SaifulAbir/facility_finder",
+      "liveLink": "",
+      "image": "/images/facilityfinder.png"
+    },
+    {
+      "id": "project-3",
       "title": "Bhalogari.com – Automotive Marketplace",
       "description": "Developed a full-featured vehicle marketplace for Bangladesh with advanced search, comparison, and listing functionalities for new, used, and reconditioned cars.",
       "techStack": ["Django", "React.js", "Django REST Framework", "PostgreSQL", "Material UI"],
       "githubLink": "", 
       "liveLink": "https://bhalogari.com/",
       "image": "/images/bhalogari.png"
+    },
+    {
+      "id": "project-4",
+      "title": "BlumenIT – E-commerce Platform",
+      "description": "Engineered a scalable e-commerce platform for selling IT products, including a custom PC builder, product management tools, and marketing campaign integration to boost engagement and sales.",
+      "techStack": ["React.js", "Django", "PostgreSQL", "TypeScript", "Material UI"],
+      "githubLink": "",
+      "liveLink": "https://blumenit.com/",
+      "image": "/images/blumenit.png"
     }
   ],
   "timeline": {

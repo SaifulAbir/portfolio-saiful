@@ -90,20 +90,27 @@
   "timeline": {
     "title": "Career Journey",
     "events": [
-      {
-        "id": "event-1",
-        "date": "Jan 2023 - Present",
-        "title": "Software Engineer",
-        "company": "Tech Innovations Inc.",
-        "description": "Developed and maintained scalable web applications, contributing to both front-end and back-end services."
-      },
-      {
-        "id": "event-2",
-        "date": "June 2021 - Dec 2022",
-        "title": "Junior Developer",
-        "company": "Web Solutions Co.",
-        "description": "Assisted in the development of client websites using modern web technologies."
-      }
+    {
+      "id": "event-1",
+      "date": "Sep 2021 – Sep 2023",
+      "title": "Software Engineer",
+      "company": "Miaki Media Ltd.",
+      "description": "Developed and deployed scalable software systems including E-commerce and donation platforms. Automated CI/CD pipelines, optimized database queries, and enhanced performance by reducing page load times and improving deployment efficiency."
+    },
+    {
+      "id": "event-2",
+      "date": "Mar 2021 – Aug 2021",
+      "title": "Software Engineer",
+      "company": "Dekko Isho Group",
+      "description": "Modernized legacy codebase, integrated third-party APIs, and developed a barcode-based fabric tracking system that boosted R&D efficiency by 40%."
+    },
+    {
+      "id": "event-3",
+      "date": "Jul 2019 – Mar 2021",
+      "title": "Software Engineer",
+      "company": "Ishraak Solutions Limited",
+      "description": "Built job and skill test platforms and national school information systems. Collaborated in Agile sprints, performed unit testing, and worked on interactive map-based data display."
+    }
     ]
   },
   "contact": {

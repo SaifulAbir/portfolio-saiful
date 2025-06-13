@@ -48,7 +48,7 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I am a passionate software engineer with a strong background in building robust and user-friendly applications. My expertise lies in front-end development with Next.js and back-end services with Node.js, combined with a keen eye for design and user experience. I thrive on solving complex problems and continuously learning new technologies.",
+    "bio": "I'm a full-stack software engineer with a strong foundation in Python, JavaScript, and TypeScript, currently pursuing a Master's in Automotive Software Engineering in Chemnitz, Germany. With over four years of industry experience, I've built scalable web applications using Django, FastAPI, React, and modern DevOps tools like Docker, AWS, and CI/CD pipelines. I care deeply about clean code, system design, and delivering impactful user experiences.",
     "profileImage": "/profile.jpg"
   },
   "skills": {
@@ -56,19 +56,23 @@
     "categories": [
       {
         "name": "Frontend",
-        "technologies": ["Next.js", "React", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "shadcn/ui", "Framer Motion"]
+        "technologies": ["Next.js", "React", "TypeScript", "JavaScript", "HTML", 
+        "CSS", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Bootstrap", "jQuery"]
       },
       {
         "name": "Backend",
-        "technologies": ["Node.js", "Express.js", "Python", "Django", "FastAPI"]
+        "technologies": ["Python", "Django", "FastAPI", "Flask", "SQLAlchemy", 
+        "JWT", "OAuth", "Celery", "RabbitMQ", "WebSocket"]
       },
       {
         "name": "Databases",
-        "technologies": ["PostgreSQL", "MongoDB", "MySQL"]
+        "technologies": ["PostgreSQL", "MySQL"]
       },
       {
         "name": "Tools & DevOps",
-        "technologies": ["Git", "GitHub", "GitLab", "Docker", "Netlify", "Vercel", "AWS"]
+        "technologies": ["Git", "GitHub", "GitLab", "GitHub Actions", 
+        "GitLab CI", "Docker", "Netlify", "Vercel", "AWS", "Nginx", 
+        "Unix/Linux Terminal"]
       }
     ]
   },
@@ -123,28 +127,26 @@
     "title": "Education",
     "institutions": [
       {
-        "degree": "Bachelor of Science in Computer Science",
-        "institution": "University of Technology",
-        "location": "New York, NY",
-        "period": "2018 - 2022",
-        "description": "Focused on software engineering, algorithms, and system design...",
+        "degree": "Master of Science in Automotive Software Engineering",
+        "institution": "Chemnitz University of Technology",
+        "location": "Chemnitz, Germany",
+        "period": "2022 - Present",
+        "description": "Interdisciplinary program focusing on embedded systems, automotive electronics, control systems, and software engineering practices for intelligent vehicles.",
         "achievements": [
-          "Dean's List for 6 consecutive semesters",
-          "President of Computer Science Society",
-          "Winner of Annual Hackathon 2021"
+          "Current grade: 2.3 (German GPA scale)",
+          "Learning German (B1 level)",
+          "Actively building projects alongside academic research"
         ],
-        "gpa": "3.8/4.0"
+        "gpa": "2.3/1.0"
       },
       {
-        "degree": "Bachelor of Science in Computer Science",
-        "institution": "University of Technology",
-        "location": "New York, NY",
-        "period": "2018 - 2022",
-        "description": "Focused on software engineering, algorithms, and system design...",
+        "degree": "Bachelor of Science in Computer Science & Engineering",
+        "institution": "International University of Business Agriculture and Technology",
+        "location": "Dhaka, Bangladesh",
+        "period": "January 2015 - April 2019",
+        "description": "Focused on software development, data structures, algorithms, databases, and distributed systems with hands-on project work and research components.",
         "achievements": [
-          "Dean's List for 6 consecutive semesters",
-          "President of Computer Science Society",
-          "Winner of Annual Hackathon 2021"
+          "Final Grade: 1.8 (German GPA scale)"
         ],
         "gpa": "3.8/4.0"
       }

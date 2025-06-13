@@ -1,8 +1,8 @@
 // src/components/About.tsx
-'use client';
-import { motion } from 'framer-motion';
-import { Card, CardContent } from './ui/card';
-import { Code, Database, Palette, Zap, ArrowRight } from 'lucide-react';
+"use client";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "./ui/card";
+import { Code, Database, Palette, Zap, ArrowRight } from "lucide-react";
 
 interface AboutProps {
     data: {
@@ -21,26 +21,26 @@ export function About({ data }: AboutProps) {
             icon: Code,
             title: "Clean Code",
             description: "Writing maintainable, scalable solutions",
-            color: "from-indigo-500 to-blue-500"
+            color: "from-indigo-500 to-blue-500",
         },
         {
             icon: Database,
             title: "System Design",
             description: "Architecting robust backend systems",
-            color: "from-purple-500 to-indigo-500"
+            color: "from-purple-500 to-indigo-500",
         },
         {
             icon: Palette,
             title: "UI/UX Focus",
             description: "Creating intuitive user experiences",
-            color: "from-pink-500 to-purple-500"
+            color: "from-pink-500 to-purple-500",
         },
         {
             icon: Zap,
             title: "Performance",
             description: "Optimizing for speed and efficiency",
-            color: "from-amber-500 to-orange-500"
-        }
+            color: "from-amber-500 to-orange-500",
+        },
     ];
 
     const containerVariants = {
@@ -60,7 +60,7 @@ export function About({ data }: AboutProps) {
             y: 0,
             opacity: 1,
             transition: {
-                type: 'spring',
+                type: "spring",
                 stiffness: 100,
                 damping: 12,
             },
@@ -74,7 +74,7 @@ export function About({ data }: AboutProps) {
             opacity: 1,
             scale: 1,
             transition: {
-                type: 'spring',
+                type: "spring",
                 stiffness: 100,
                 damping: 15,
                 duration: 0.6,
@@ -91,7 +91,7 @@ export function About({ data }: AboutProps) {
             <motion.div
                 animate={{
                     y: [-20, 20, -20],
-                    rotate: [0, 180, 360]
+                    rotate: [0, 180, 360],
                 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-20 right-10 w-8 h-8 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full blur-sm"
@@ -99,9 +99,14 @@ export function About({ data }: AboutProps) {
             <motion.div
                 animate={{
                     y: [20, -20, 20],
-                    x: [-10, 10, -10]
+                    x: [-10, 10, -10],
                 }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1,
+                }}
                 className="absolute top-40 left-10 w-12 h-12 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-sm"
             />
 
@@ -117,12 +122,12 @@ export function About({ data }: AboutProps) {
                     <motion.h2
                         className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
                         animate={{
-                            backgroundPosition: ["0%", "100%", "0%"]
+                            backgroundPosition: ["0%", "100%", "0%"],
                         }}
                         transition={{
                             duration: 5,
                             repeat: Infinity,
-                            ease: "linear"
+                            ease: "linear",
                         }}
                     >
                         <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent bg-[length:200%_auto]">
@@ -159,7 +164,7 @@ export function About({ data }: AboutProps) {
                                     transition={{ duration: 0.8, delay: 0.3 }}
                                     className="text-lg leading-relaxed text-slate-600 dark:text-slate-300 space-y-4"
                                 >
-                                    {bio.split('\n').map((paragraph, index) => (
+                                    {bio.split("\n").map((paragraph, index) => (
                                         <motion.p
                                             key={index}
                                             initial={{ opacity: 0, y: 20 }}
@@ -192,10 +197,14 @@ export function About({ data }: AboutProps) {
                             className="grid grid-cols-2 gap-4"
                         >
                             {[
-                                { emoji: '☕', title: 'Coffee Lover', desc: 'Fueled by caffeine' },
-                                { emoji: '🎵', title: 'Music', desc: 'Coding with beats' },
-                                { emoji: '📚', title: 'Learning', desc: 'Always curious' },
-                                { emoji: '🎮', title: 'Gaming', desc: 'Pixel adventures' }
+                                {
+                                    emoji: "☕",
+                                    title: "Coffee Lover",
+                                    desc: "Fueled by caffeine",
+                                },
+                                { emoji: "🎵", title: "Music", desc: "Coding with beats" },
+                                { emoji: "📚", title: "Learning", desc: "Always curious" },
+                                { emoji: "🎮", title: "Gaming", desc: "Pixel adventures" },
                             ].map((interest, index) => (
                                 <motion.div
                                     key={interest.title}
@@ -207,27 +216,31 @@ export function About({ data }: AboutProps) {
                                         rotateY: 15,
                                         rotateX: 10,
                                         scale: 1.05,
-                                        transition: { duration: 0.3 }
+                                        transition: { duration: 0.3 },
                                     }}
                                     className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 text-center shadow-lg border border-white/20 cursor-pointer"
-                                    style={{ transformStyle: 'preserve-3d' }}
+                                    style={{ transformStyle: "preserve-3d" }}
                                 >
                                     <motion.div
                                         animate={{
                                             rotateZ: [0, 10, -10, 0],
-                                            scale: [1, 1.1, 1]
+                                            scale: [1, 1.1, 1],
                                         }}
                                         transition={{
                                             duration: 3,
                                             repeat: Infinity,
-                                            delay: index * 0.5
+                                            delay: index * 0.5,
                                         }}
                                         className="text-3xl mb-2"
                                     >
                                         {interest.emoji}
                                     </motion.div>
-                                    <h4 className="font-semibold text-sm text-slate-800 dark:text-slate-200">{interest.title}</h4>
-                                    <p className="text-xs text-slate-600 dark:text-slate-400">{interest.desc}</p>
+                                    <h4 className="font-semibold text-sm text-slate-800 dark:text-slate-200">
+                                        {interest.title}
+                                    </h4>
+                                    <p className="text-xs text-slate-600 dark:text-slate-400">
+                                        {interest.desc}
+                                    </p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -243,7 +256,7 @@ export function About({ data }: AboutProps) {
                                     whileHover={{
                                         scale: 1.02,
                                         y: -4,
-                                        transition: { type: "spring", stiffness: 300, damping: 20 }
+                                        transition: { type: "spring", stiffness: 300, damping: 20 },
                                     }}
                                     className="group"
                                 >

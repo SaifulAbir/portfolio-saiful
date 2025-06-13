@@ -82,18 +82,9 @@
       "title": "Interactive Developer Portfolio",
       "description": "A modern, interactive, and visually polished portfolio website built with Next.js, shadcn/ui, and Framer Motion.",
       "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
-      "githubLink": "https://github.com/your-username/your-portfolio",
-      "liveLink": "https://your-portfolio.netlify.app/",
+      "githubLink": "https://github.com/SaifulAbir/portfolio-saiful",
+      "liveLink": "https://saifulislam.pro/",
       "image": "/images/project1.png"
-    },
-    {
-      "id": "project-2",
-      "title": "E-commerce Platform",
-      "description": "Full-stack e-commerce application with user authentication, product catalog, and payment integration.",
-      "techStack": ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-      "githubLink": "https://github.com/your-username/ecommerce-platform",
-      "liveLink": "https://ecommerce-demo.com/",
-      "image": "/images/project2.png"
     }
   ],
   "timeline": {

@@ -220,7 +220,7 @@ export function Timeline({ data }: TimelineProps) {
                                                 />
 
                                                 <CardHeader className="p-6 pb-4 relative z-10">
-                                                    <div className="flex items-center gap-2 mb-2">
+                                                    <div className="flex items-center justify-end gap-2 mb-2">
                                                         <Calendar className="h-4 w-4 text-slate-500 dark:text-slate-400" />
                                                         <CardDescription className="text-sm font-semibold text-slate-600 dark:text-slate-400">
                                                             {event.date}
@@ -234,14 +234,14 @@ export function Timeline({ data }: TimelineProps) {
                                                     <CardTitle className="text-xl font-bold text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-2">
                                                         {event.title}
                                                     </CardTitle>
-                                                    <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                                                    <div className="flex items-center justify-end gap-2 text-slate-600 dark:text-slate-400">
                                                         <span className="font-medium">{event.company}</span>
                                                         {event.location && (
                                                             <>
                                                                 <span>•</span>
                                                                 <div className="flex items-center gap-1">
                                                                     <MapPin className="h-3 w-3" />
-                                                                    <span className="text-sm">{event.location}</span>
+                                                                    <span className="text-sm whitespace-nowrap">{event.location}</span>
                                                                 </div>
                                                             </>
                                                         )}
@@ -366,7 +366,7 @@ export function Timeline({ data }: TimelineProps) {
                                                                 <span>•</span>
                                                                 <div className="flex items-center gap-1">
                                                                     <MapPin className="h-3 w-3" />
-                                                                    <span className="text-sm">{event.location}</span>
+                                                                    <span className="text-sm whitespace-nowrap">{event.location}</span>
                                                                 </div>
                                                             </>
                                                         )}

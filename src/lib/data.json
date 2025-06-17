@@ -122,6 +122,8 @@
       "date": "Sep 2021 – Sep 2023",
       "title": "Software Engineer",
       "company": "Miaki Media Ltd.",
+      "location": "Dhaka, Bangladesh",
+      "duration": "2 Years",
       "description": "Developed and deployed scalable software systems including E-commerce and donation platforms. Automated CI/CD pipelines, optimized database queries, and enhanced performance by reducing page load times and improving deployment efficiency."
     },
     {
@@ -129,6 +131,7 @@
       "date": "Mar 2021 – Aug 2021",
       "title": "Software Engineer",
       "company": "Dekko Isho Group",
+      "location": "Dhaka, Bangladesh",
       "description": "Modernized legacy codebase, integrated third-party APIs, and developed a barcode-based fabric tracking system that boosted R&D efficiency by 40%."
     },
     {
@@ -136,6 +139,7 @@
       "date": "Jul 2019 – Mar 2021",
       "title": "Software Engineer",
       "company": "Ishraak Solutions Limited",
+      "location": "Dhaka, Bangladesh",
       "description": "Built job and skill test platforms and national school information systems. Collaborated in Agile sprints, performed unit testing, and worked on interactive map-based data display."
     }
     ]

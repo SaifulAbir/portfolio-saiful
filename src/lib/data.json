@@ -1,9 +1,9 @@
 {
   "hero": {
     "name": "Saiful Islam",
-    "title": "Software Engineer | Full-Stack Developer",
+    "title": "Full-Stack Developer (Python & React)",
     "profileImage": "/profile.jpg",
-    "description": "Building innovative and scalable web solutions.",
+    "description": "6+ years building scalable backends, data-driven dashboards, and modern web apps with Python, Django, FastAPI, React & DevOps.",
     "cta": "Download Resume",
     "socialLinks": {
       "github": "https://github.com/SaifulAbir",

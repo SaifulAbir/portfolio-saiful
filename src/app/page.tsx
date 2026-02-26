@@ -69,7 +69,7 @@ export default function Home() {
               <Contact data={data.contact} />
             </section>
           </main>
-          <Footer data={data.hero.socialLinks} />
+          <Footer data={{ ...data.hero.socialLinks, email: data.contact.email }} />
         </>
       )}
     </div>

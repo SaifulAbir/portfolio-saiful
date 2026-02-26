@@ -110,7 +110,7 @@ export function Footer({ data }: FooterProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-slate-600 dark:text-slate-400 text-lg mb-8 max-w-md mx-auto"
                     >
-                        Crafting digital experiences with passion and precision
+                        Building scalable systems & data-driven solutions
                     </motion.p>
 
                     {/* Social Links */}

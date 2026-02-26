@@ -130,6 +130,14 @@
     "title": "Career Journey",
     "events": [
     {
+      "id": "event-0",
+      "date": "Aug 2025 – Present",
+      "title": "DevOps Automation Intern",
+      "company": "Rohde & Schwarz",
+      "location": "Munich, Bavaria, Germany",
+      "description": "Built internal analytics dashboards using FastAPI and Django with Jinja2/Tailwind UI. Developed reusable Python automation packages for ETL workflows. Implemented ETL pipelines (Pandas, NumPy) extracting data from RTC, MySQL, and GitLab CSV sources into PostgreSQL with Plotly visualizations. Migrated defect management from IBM RTC to Jira, designed a reusable Jira integration layer, and automated bug creation from regression test failures. Improved backend performance with async endpoints, caching layers, and optimized queries."
+    },
+    {
       "id": "event-1",
       "date": "Sep 2021 – Jul 2025",
       "title": "Software Engineer",

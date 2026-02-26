@@ -377,6 +377,18 @@ export function Hero({ data }: HeroProps) {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center cursor-pointer group"
+          role="button"
+          tabIndex={0}
+          aria-label="Scroll to next section"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              const nextSection = document.querySelector(
+                "main > section:nth-child(2)",
+              );
+              nextSection?.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
           onClick={() => {
             const nextSection = document.querySelector(
               "main > section:nth-child(2)",

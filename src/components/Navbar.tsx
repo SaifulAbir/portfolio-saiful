@@ -10,8 +10,8 @@ export function Navbar() {
     const { theme, setTheme } = useTheme();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 10);
@@ -19,6 +19,29 @@ export function Navbar() {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const sectionIds = ['about', 'skills', 'education', 'projects', 'timeline', 'contact'];
+        const observers: IntersectionObserver[] = [];
+
+        sectionIds.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(id);
+                    }
+                },
+                { rootMargin: '-40% 0px -55% 0px' }
+            );
+            observer.observe(el);
+            observers.push(observer);
+        });
+
+        return () => observers.forEach((o) => o.disconnect());
     }, []);
 
     const navItems = [
@@ -113,12 +136,17 @@ export function Navbar() {
                                 >
                                     <Link
                                         href={item.href}
-                                        className={`text-sm font-medium text-slate-600 dark:text-slate-300 ${getHoverColor(item.color)} transition-all duration-300 relative group py-2`}
+                                        className={`text-sm font-medium transition-all duration-300 relative group py-2 ${
+                                            activeSection === item.href.slice(1)
+                                                ? 'text-indigo-600 dark:text-indigo-400'
+                                                : `text-slate-600 dark:text-slate-300 ${getHoverColor(item.color)}`
+                                        }`}
                                     >
                                         {item.label}
                                         <motion.span
                                             className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r ${getGradientClass(item.color)} rounded-full`}
-                                            initial={{ width: 0 }}
+                                            initial={false}
+                                            animate={{ width: activeSection === item.href.slice(1) ? '100%' : 0 }}
                                             whileHover={{ width: '100%' }}
                                             transition={{ duration: 0.3 }}
                                         />
@@ -261,7 +289,11 @@ export function Navbar() {
                                             <Link
                                                 href={item.href}
                                                 onClick={closeMobileMenu}
-                                                className={`block text-lg font-medium text-slate-700 dark:text-slate-300 ${getHoverColor(item.color)} transition-all duration-300 py-3 px-4 rounded-xl hover:bg-slate-100/50 dark:hover:bg-slate-800/50 relative group`}
+                                                className={`block text-lg font-medium transition-all duration-300 py-3 px-4 rounded-xl hover:bg-slate-100/50 dark:hover:bg-slate-800/50 relative group ${
+                                                    activeSection === item.href.slice(1)
+                                                        ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30'
+                                                        : `text-slate-700 dark:text-slate-300 ${getHoverColor(item.color)}`
+                                                }`}
                                             >
                                                 <motion.div
                                                     className={`absolute inset-0 bg-gradient-to-r ${getGradientClass(item.color)} opacity-0 group-hover:opacity-10 rounded-xl transition-opacity duration-300`}

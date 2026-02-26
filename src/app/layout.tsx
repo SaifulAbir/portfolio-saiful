@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Saiful Islam - Software Engineer',
     description: 'A modern and interactive portfolio showcasing my skills, projects, and career journey as a Software Engineer.',
-    creator: '@your_twitter_handle', // Optional
+    creator: '@saifulislamcse',
     images: ['/social-preview.png'],
   },
   robots: {

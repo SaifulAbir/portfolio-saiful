@@ -8,7 +8,6 @@ interface AboutProps {
     data: {
         title: string;
         bio: string;
-        profileImage: string;
     };
 }
 

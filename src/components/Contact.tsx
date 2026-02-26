@@ -1,13 +1,13 @@
 // src/components/Contact.tsx
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Mail, Github, Linkedin, Twitter, Send, MapPin, MessageCircle } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, Send, MapPin, MessageCircle, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -24,18 +24,22 @@ interface ContactProps {
 
 export function Contact({ data }: ContactProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [toast, setToast] = useState<{ visible: boolean; message: string }>({ visible: false, message: '' });
+
+    const showToast = (message: string) => {
+        setToast({ visible: true, message });
+        setTimeout(() => setToast({ visible: false, message: '' }), 4000);
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
         await new Promise(resolve => setTimeout(resolve, 1500));
 
-        alert('Thank you for your message! I\'ll get back to you soon.');
+        showToast('Thank you for your message! I\'ll get back to you soon.');
         setIsSubmitting(false);
 
-        // Reset form
         (e.target as HTMLFormElement).reset();
     };
 
@@ -391,6 +395,26 @@ export function Contact({ data }: ContactProps) {
                     </div>
                 </motion.div>
             </div>
+
+            {/* Toast notification */}
+            <AnimatePresence>
+                {toast.visible && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 50, x: '-50%' }}
+                        animate={{ opacity: 1, y: 0, x: '-50%' }}
+                        exit={{ opacity: 0, y: 50, x: '-50%' }}
+                        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                        className="fixed bottom-6 left-1/2 z-50 flex items-center gap-3 bg-white dark:bg-slate-800 shadow-2xl border border-slate-200 dark:border-slate-700 rounded-xl px-5 py-4"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center flex-shrink-0">
+                            <CheckCircle className="h-5 w-5 text-white" />
+                        </div>
+                        <p className="text-sm font-medium text-slate-700 dark:text-slate-200">{toast.message}</p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

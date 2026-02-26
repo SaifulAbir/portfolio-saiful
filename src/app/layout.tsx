@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { cn } from '@/lib/utils'; // For tailwind-merge
+import { cn } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Saiful Islam - Software Engineer',
   description: 'A modern and interactive portfolio showcasing my skills, projects, and career journey as a Software Engineer.',
   keywords: ['Software Engineer', 'Developer', 'Portfolio', 'Next.js', 'React', 'TypeScript'],
-  // Add viewport meta tag here
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   openGraph: {
     title: 'Saiful Islam - Software Engineer',
     description: 'A modern and interactive portfolio showcasing my skills, projects, and career journey as a Software Engineer.',
@@ -50,7 +50,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // Add sitemap.xml and robots.txt in public folder
 };
 
 export default function RootLayout({

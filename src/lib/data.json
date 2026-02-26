@@ -11,10 +11,10 @@
       "gitlab": "https://gitlab.com/saiful-cse"
     },
     "skills": [
-      "Software Engineer",
       "Full-Stack Developer",
+      "Backend Engineer",
       "DevOps Practitioner",
-      "Cloud Architect",
+      "Data & ETL Engineer",
       "API Designer",
       "Problem Solver",
       "Agile Developer",
@@ -22,10 +22,11 @@
     ],
     "techStack": [
       { "name": "Python", "color": "from-blue-500 to-cyan-500" },
-      { "name": "JavaScript", "color": "from-green-500 to-emerald-500" },
-      { "name": "TypeScript", "color": "from-blue-600 to-indigo-600" },
       { "name": "React", "color": "from-purple-500 to-indigo-500" },
       { "name": "Django", "color": "from-emerald-600 to-green-500" },
+      { "name": "FastAPI", "color": "from-teal-500 to-cyan-500" },
+      { "name": "TypeScript", "color": "from-blue-600 to-indigo-600" },
+      { "name": "Docker", "color": "from-sky-500 to-blue-600" },
       { "name": "AWS", "color": "from-orange-500 to-amber-500" }
     ],
     "badges": {
@@ -48,7 +49,7 @@
   },
   "about": {
     "title": "About Me",
-    "bio": "I'm a full-stack software engineer with a strong foundation in Python, JavaScript, and TypeScript, currently pursuing a Master's in Automotive Software Engineering in Chemnitz, Germany. With over five years of industry experience, I've built scalable web applications using Django, FastAPI, React, and modern DevOps tools like Docker, AWS, and CI/CD pipelines. I care deeply about clean code, system design, and delivering impactful user experiences.",
+    "bio": "I'm a Full-Stack Developer (Python & React) with 6+ years of experience building scalable backend systems, data-driven analytics dashboards, and user-facing web applications. My work spans backend engineering, ETL pipelines, automation, and modern frontend development — helping teams deliver reliable, high-impact software and actionable insights.\n\nCurrently pursuing a Master's in Automotive Software Engineering at Chemnitz University of Technology, Germany. I combine strong backend fundamentals with a product-oriented mindset, focusing on clean architecture, code quality, performance, and long-term maintainability.",
     "profileImage": "/profile.jpg"
   },
   "skills": {
@@ -56,23 +57,34 @@
     "categories": [
       {
         "name": "Frontend",
-        "technologies": ["Next.js", "React", "TypeScript", "JavaScript", "HTML", 
-        "CSS", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Bootstrap", "jQuery"]
+        "technologies": ["Next.js", "React", "TypeScript", "JavaScript", "HTML", "CSS",
+        "Tailwind CSS", "Material UI", "shadcn/ui", "Framer Motion", "Bootstrap", "Alpine.js", "jQuery", "Jinja2"]
       },
       {
         "name": "Backend",
-        "technologies": ["Python", "Django", "FastAPI", "Flask", "SQLAlchemy", 
-        "JWT", "OAuth", "Celery", "RabbitMQ", "WebSocket"]
+        "technologies": ["Python", "Django", "FastAPI", "Flask", "Django REST Framework",
+        "SQLAlchemy", "Pydantic", "JWT", "OAuth", "Celery", "RabbitMQ", "WebSocket"]
+      },
+      {
+        "name": "Data, ETL & Automation",
+        "technologies": ["Pandas", "NumPy", "Plotly", "ETL Pipelines", "Python Scripting", "Bash"]
       },
       {
         "name": "Databases",
-        "technologies": ["PostgreSQL", "MySQL"]
+        "technologies": ["PostgreSQL", "MySQL", "Redis"]
       },
       {
-        "name": "Tools & DevOps",
-        "technologies": ["Git", "GitHub", "GitLab", "GitHub Actions", 
-        "GitLab CI", "Docker", "Netlify", "Vercel", "AWS", "Nginx", 
-        "Unix/Linux Terminal"]
+        "name": "DevOps & Cloud",
+        "technologies": ["Docker", "Kubernetes", "ArgoCD", "AWS", "GitHub Actions",
+        "GitLab CI", "Nginx", "Git", "GitHub", "GitLab", "Netlify", "Vercel", "Linux"]
+      },
+      {
+        "name": "Practices & Tools",
+        "technologies": ["Clean Code", "Test Automation", "Agile/Scrum", "System Design", "Jira", "Confluence", "Figma"]
+      },
+      {
+        "name": "Automotive & Embedded",
+        "technologies": ["AUTOSAR Classic", "Embedded C/C++", "CAN", "Diagnostics", "Vector DaVinci"]
       }
     ]
   },

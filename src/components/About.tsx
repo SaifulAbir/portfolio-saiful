@@ -2,7 +2,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
-import { Code, Database, Palette, Zap, ArrowRight } from "lucide-react";
+import { Server, BarChart3, Cloud, Blocks, ArrowRight } from "lucide-react";
 
 interface AboutProps {
     data: {
@@ -17,27 +17,27 @@ export function About({ data }: AboutProps) {
     // Key strengths/highlights
     const highlights = [
         {
-            icon: Code,
-            title: "Clean Code",
-            description: "Writing maintainable, scalable solutions",
+            icon: Server,
+            title: "Backend & APIs",
+            description: "Python, Django, FastAPI, DRF — scalable services & REST APIs",
             color: "from-indigo-500 to-blue-500",
         },
         {
-            icon: Database,
-            title: "System Design",
-            description: "Architecting robust backend systems",
+            icon: BarChart3,
+            title: "Data & Automation",
+            description: "ETL pipelines, analytics dashboards, Pandas & Plotly",
             color: "from-purple-500 to-indigo-500",
         },
         {
-            icon: Palette,
-            title: "UI/UX Focus",
-            description: "Creating intuitive user experiences",
+            icon: Cloud,
+            title: "DevOps & Cloud",
+            description: "Docker, Kubernetes, CI/CD, AWS & GitOps workflows",
             color: "from-pink-500 to-purple-500",
         },
         {
-            icon: Zap,
-            title: "Performance",
-            description: "Optimizing for speed and efficiency",
+            icon: Blocks,
+            title: "Clean Architecture",
+            description: "System design, testability & long-term maintainability",
             color: "from-amber-500 to-orange-500",
         },
     ];
@@ -177,16 +177,21 @@ export function About({ data }: AboutProps) {
                                 </motion.div>
 
                                 {/* Call to action */}
-                                <motion.div
+                                <motion.a
+                                    href="#contact"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.6, delay: 0.8 }}
-                                    className="mt-8 flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold cursor-pointer group"
+                                    className="mt-8 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold cursor-pointer group"
+                                    onClick={(e: React.MouseEvent) => {
+                                        e.preventDefault();
+                                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                                    }}
                                 >
                                     <span>Let&apos;s build something amazing together</span>
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </motion.div>
+                                </motion.a>
                             </CardContent>
                         </Card>
 

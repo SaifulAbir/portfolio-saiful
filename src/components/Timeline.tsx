@@ -12,7 +12,7 @@ interface TimelineEvent {
     title: string;
     company: string;
     description: string;
-    type?: 'work' | 'education' | 'achievement' | 'project';
+    type?: string;
     location?: string;
     duration?: string;
     skills?: string[];

@@ -1,5 +1,4 @@
-// src/app/page.tsx
-'use client'; // THIS MUST BE THE VERY FIRST LINE
+'use client';
 
 import { useState, useEffect, useCallback } from 'react';
 import { Navbar } from '@/components/Navbar';
@@ -12,12 +11,13 @@ import { Education } from '@/components/Education';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { Loader } from '@/components/Loader';
-import data from '@/lib/data.json';
+import { LanguageProvider, useLanguage } from '@/lib/LanguageContext';
 import { cn } from '@/lib/utils';
 
 const MIN_LOADER_MS = 800;
 
-export default function Home() {
+function HomeContent() {
+  const { data } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
 
   const finishLoading = useCallback(() => setIsLoading(false), []);
@@ -73,5 +73,13 @@ export default function Home() {
         </>
       )}
     </div>
+  );
+}
+
+export default function Home() {
+  return (
+    <LanguageProvider>
+      <HomeContent />
+    </LanguageProvider>
   );
 }

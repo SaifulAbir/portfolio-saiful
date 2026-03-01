@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Calendar, MapPin, Trophy, Briefcase, GraduationCap, Star } from 'lucide-react';
 import { useRef } from 'react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface TimelineEvent {
     id: string;
@@ -49,12 +50,14 @@ function TimelineCard({
     event,
     typeColor,
     alignment,
+    ui,
 }: {
     event: TimelineEvent;
     typeColor: string;
     alignment: 'left' | 'right';
+    ui: { featured: string; current: string };
 }) {
-    const isCurrent = event.date.includes('Present');
+    const isCurrent = event.date.includes('Present') || event.date.includes('Heute');
     const justifyDate = alignment === 'left' ? 'justify-end' : 'justify-start';
     const justifyCompany = alignment === 'left' ? 'justify-end' : 'justify-start';
     const badgePosition = alignment === 'left' ? 'left-4' : 'right-4';
@@ -81,7 +84,7 @@ function TimelineCard({
                             className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg"
                         >
                             <Star className="h-3 w-3" />
-                            Featured
+                            {ui.featured}
                         </motion.div>
                     </div>
                 )}
@@ -102,7 +105,7 @@ function TimelineCard({
                         {isCurrent && (
                             <span className="flex items-center gap-1.5 text-xs font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30 px-2 py-1 rounded-full">
                                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                                Current
+                                {ui.current}
                             </span>
                         )}
                         {event.duration && (
@@ -164,6 +167,8 @@ function TimelineCard({
 
 export function Timeline({ data }: TimelineProps) {
     const { title, events } = data;
+    const { data: langData } = useLanguage();
+    const ui = langData.ui.timeline;
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -249,7 +254,7 @@ export function Timeline({ data }: TimelineProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-slate-600 dark:text-slate-400 mt-6 text-lg max-w-2xl mx-auto"
                     >
-                        My professional journey and key milestones
+                        {ui.subtitle}
                     </motion.p>
                 </motion.div>
 
@@ -272,7 +277,7 @@ export function Timeline({ data }: TimelineProps) {
                         const typeColor = getTypeColor(event.type);
                         const TypeIcon = getTypeIcon(event.type);
                         const isLeft = index % 2 === 0;
-                        const isCurrent = event.date.includes('Present');
+                        const isCurrent = event.date.includes('Present') || event.date.includes('Heute');
 
                         return (
                             <motion.div
@@ -300,7 +305,7 @@ export function Timeline({ data }: TimelineProps) {
                                         </motion.div>
                                     </div>
                                     <div className="flex-1 pl-4">
-                                        <TimelineCard event={event} typeColor={typeColor} alignment="right" />
+                                        <TimelineCard event={event} typeColor={typeColor} alignment="right" ui={ui} />
                                     </div>
                                 </div>
 
@@ -308,7 +313,7 @@ export function Timeline({ data }: TimelineProps) {
                                 <div className="hidden md:flex items-center w-full">
                                     <div className={`w-5/12 ${isLeft ? 'pr-8 text-right' : ''}`}>
                                         {isLeft && (
-                                            <TimelineCard event={event} typeColor={typeColor} alignment="left" />
+                                            <TimelineCard event={event} typeColor={typeColor} alignment="left" ui={ui} />
                                         )}
                                     </div>
 
@@ -332,7 +337,7 @@ export function Timeline({ data }: TimelineProps) {
 
                                     <div className={`w-5/12 ${!isLeft ? 'pl-8 text-left' : ''}`}>
                                         {!isLeft && (
-                                            <TimelineCard event={event} typeColor={typeColor} alignment="right" />
+                                            <TimelineCard event={event} typeColor={typeColor} alignment="right" ui={ui} />
                                         )}
                                     </div>
                                 </div>

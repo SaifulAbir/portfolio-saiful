@@ -8,6 +8,7 @@ import { ExpandableDescription } from './ui/ExpandableDescription';
 import { Github, Globe, Star, Calendar, Code2, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface Project {
     id: string;
@@ -27,7 +28,9 @@ interface ProjectsProps {
 }
 
 export function Projects({ data }: ProjectsProps) {
-    // Color gradients for different projects
+    const { data: langData } = useLanguage();
+    const ui = langData.ui.projects;
+
     const getGradientColor = (index: number) => {
         const gradients = [
             "from-indigo-500 to-blue-500",
@@ -146,7 +149,7 @@ export function Projects({ data }: ProjectsProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-slate-600 dark:text-slate-400 mt-6 text-lg max-w-2xl mx-auto"
                     >
-                        Explore my latest work and creative solutions
+                        {ui.subtitle}
                     </motion.p>
                 </motion.div>
 
@@ -182,7 +185,7 @@ export function Projects({ data }: ProjectsProps) {
                                                 className="flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full shadow-lg"
                                             >
                                                 <Star className="h-3 w-3" />
-                                                Featured
+                                                {ui.featured}
                                             </motion.div>
                                         </div>
                                     )}
@@ -379,7 +382,7 @@ export function Projects({ data }: ProjectsProps) {
                                                 <Link href={project.githubLink} target="_blank" rel="noopener noreferrer" className="block">
                                                     <Button variant="outline" className="w-full flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
                                                         <Github className="h-4 w-4" />
-                                                        Code
+                                                        {ui.code}
                                                     </Button>
                                                 </Link>
                                             </motion.div>
@@ -393,7 +396,7 @@ export function Projects({ data }: ProjectsProps) {
                                                 <Link href={project.liveLink} target="_blank" rel="noopener noreferrer" className="block">
                                                     <Button className={`w-full flex items-center gap-2 bg-gradient-to-r ${gradientColor} hover:shadow-lg transition-all`}>
                                                         <Globe className="h-4 w-4" />
-                                                        Live Demo
+                                                        {ui.liveDemo}
                                                     </Button>
                                                 </Link>
                                             </motion.div>

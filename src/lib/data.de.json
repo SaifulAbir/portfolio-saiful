@@ -1,0 +1,280 @@
+{
+  "hero": {
+    "name": "Saiful Islam",
+    "title": "Full-Stack-Entwickler (Python & React)",
+    "profileImage": "/profile.jpg",
+    "description": "6+ Jahre Erfahrung in der Entwicklung skalierbarer Backends, datengetriebener Dashboards und moderner Webanwendungen mit Python, Django, FastAPI, React & DevOps.",
+    "cta": "Lebenslauf herunterladen",
+    "socialLinks": {
+      "github": "https://github.com/SaifulAbir",
+      "linkedin": "https://www.linkedin.com/in/saifulislamcse",
+      "gitlab": "https://gitlab.com/saiful-cse"
+    },
+    "skills": [
+      "Full-Stack-Entwickler",
+      "Backend-Ingenieur",
+      "DevOps-Praktiker",
+      "Daten- & ETL-Ingenieur",
+      "API-Designer",
+      "Problemlöser",
+      "Agiler Entwickler",
+      "AUTOSAR-Enthusiast"
+    ],
+    "techStack": [
+      { "name": "Python", "color": "from-blue-500 to-cyan-500" },
+      { "name": "React", "color": "from-purple-500 to-indigo-500" },
+      { "name": "Django", "color": "from-emerald-600 to-green-500" },
+      { "name": "FastAPI", "color": "from-teal-500 to-cyan-500" },
+      { "name": "TypeScript", "color": "from-blue-600 to-indigo-600" },
+      { "name": "Docker", "color": "from-sky-500 to-blue-600" },
+      { "name": "AWS", "color": "from-orange-500 to-amber-500" }
+    ],
+    "badges": {
+      "experience": {
+        "text": "6+ Jahre Erfahrung",
+        "icon": "trophy"
+      },
+      "availability": {
+        "text": "Offen für neue Möglichkeiten",
+        "icon": "pulse"
+      },
+      "location": {
+        "text": "Standort: München, Deutschland",
+        "icon": "mapPin"
+      }
+    },
+    "scrollIndicator": {
+      "text": "Scrollen zum Entdecken"
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "bio": "Ich bin ein Full-Stack-Entwickler (Python & React) mit über 6 Jahren Erfahrung in der Entwicklung skalierbarer Backend-Systeme, datengetriebener Analyse-Dashboards und benutzerfreundlicher Webanwendungen. Meine Arbeit umfasst Backend-Engineering, ETL-Pipelines, Automatisierung und moderne Frontend-Entwicklung — ich helfe Teams, zuverlässige und wirkungsvolle Software zu liefern.\n\nDerzeit verfolge ich meinen Master in Automotive Software Engineering an der Technischen Universität Chemnitz. Ich verbinde starke Backend-Grundlagen mit einer produktorientierten Denkweise und lege Wert auf saubere Architektur, Code-Qualität, Performance und langfristige Wartbarkeit.",
+    "profileImage": "/profile.jpg"
+  },
+  "skills": {
+    "title": "Mein Tech-Stack",
+    "categories": [
+      {
+        "name": "Frontend",
+        "technologies": ["Next.js", "React", "TypeScript", "JavaScript", "HTML", "CSS",
+        "Tailwind CSS", "Material UI", "shadcn/ui", "Framer Motion", "Bootstrap", "Alpine.js", "jQuery", "Jinja2"]
+      },
+      {
+        "name": "Backend",
+        "technologies": ["Python", "Django", "FastAPI", "Flask", "Django REST Framework",
+        "SQLAlchemy", "Pydantic", "JWT", "OAuth", "Celery", "RabbitMQ", "WebSocket"]
+      },
+      {
+        "name": "Daten, ETL & Automatisierung",
+        "technologies": ["Pandas", "NumPy", "Plotly", "ETL-Pipelines", "Python-Scripting", "Bash"]
+      },
+      {
+        "name": "Datenbanken",
+        "technologies": ["PostgreSQL", "MySQL", "Redis"]
+      },
+      {
+        "name": "DevOps & Cloud",
+        "technologies": ["Docker", "Kubernetes", "ArgoCD", "AWS", "GitHub Actions",
+        "GitLab CI", "Nginx", "Git", "GitHub", "GitLab", "Netlify", "Vercel", "Linux"]
+      },
+      {
+        "name": "Methoden & Werkzeuge",
+        "technologies": ["Clean Code", "Testautomatisierung", "Agile/Scrum", "Systemdesign", "Jira", "Confluence", "Figma"]
+      },
+      {
+        "name": "Automotive & Embedded",
+        "technologies": ["AUTOSAR Classic", "Embedded C/C++", "CAN", "Diagnostik", "Vector DaVinci"]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Interaktives Entwickler-Portfolio",
+      "description": "Eine moderne, interaktive und visuell ansprechende Portfolio-Website, erstellt mit Next.js, shadcn/ui und Framer Motion.",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "shadcn/ui"],
+      "githubLink": "https://github.com/SaifulAbir/portfolio-saiful",
+      "liveLink": "https://saifulislam.pro/",
+      "image": "/images/project1.png"
+    },
+    {
+      "id": "project-2",
+      "title": "Einrichtungsfinder Chemnitz",
+      "description": "Eine kartenbasierte Webanwendung, die Nutzern hilft, öffentliche Kinderbetreuungs- und Bildungseinrichtungen in Chemnitz zu finden — mit Filterung, Geolokalisierung und JWT-basierter Authentifizierung.",
+      "techStack": ["Django", "Next.js", "React.js", "PostgreSQL", "JWT", "Tailwind CSS"],
+      "githubLink": "https://github.com/SaifulAbir/facility_finder",
+      "liveLink": "",
+      "image": "/images/facilityfinder.png"
+    },
+    {
+      "id": "project-3",
+      "title": "Bhalogari.com – Fahrzeug-Marktplatz",
+      "description": "Entwicklung eines umfassenden Fahrzeug-Marktplatzes für Bangladesch mit erweiterter Suche, Vergleichs- und Listenfunktionen für Neu-, Gebraucht- und Importfahrzeuge.",
+      "techStack": ["Django", "React.js", "Django REST Framework", "PostgreSQL", "Material UI"],
+      "githubLink": "",
+      "liveLink": "https://bhalogari.com/",
+      "image": "/images/bhalogari.png"
+    },
+    {
+      "id": "project-4",
+      "title": "BlumenIT – E-Commerce-Plattform",
+      "description": "Entwicklung einer skalierbaren E-Commerce-Plattform für IT-Produkte mit individuellem PC-Konfigurator, Produktverwaltung und Marketing-Kampagnen-Integration.",
+      "techStack": ["React.js", "Django", "PostgreSQL", "TypeScript", "Material UI"],
+      "githubLink": "",
+      "liveLink": "https://blumenit.com/",
+      "image": "/images/blumenit.png"
+    }
+  ],
+  "timeline": {
+    "title": "Beruflicher Werdegang",
+    "events": [
+    {
+      "id": "event-0",
+      "date": "Aug 2025 – Heute",
+      "title": "DevOps Automation Praktikant",
+      "company": "Rohde & Schwarz",
+      "location": "München, Bayern, Deutschland",
+      "type": "work",
+      "featured": true,
+      "duration": "7 Monate",
+      "description": "Entwicklung interner Analyse-Dashboards mit FastAPI und Django mit Jinja2/Tailwind UI. Erstellung wiederverwendbarer Python-Automatisierungspakete für ETL-Workflows. Implementierung von ETL-Pipelines (Pandas, NumPy) zur Datenextraktion aus RTC, MySQL und GitLab-CSV-Quellen in PostgreSQL mit Plotly-Visualisierungen. Migration des Fehlermanagements von IBM RTC zu Jira und Automatisierung der Bug-Erstellung aus Regressionstestfehlern. Verbesserung der Backend-Performance durch asynchrone Endpunkte, Caching und optimierte Abfragen.",
+      "skills": ["FastAPI", "Django", "Pandas", "NumPy", "Plotly", "PostgreSQL", "Docker", "GitLab CI"]
+    },
+    {
+      "id": "event-1",
+      "date": "Sep 2021 – Jul 2025",
+      "title": "Softwareentwickler",
+      "company": "Miaki Media Ltd.",
+      "location": "Dhaka, Bangladesch",
+      "type": "work",
+      "duration": "4 Jahre",
+      "description": "Entwicklung und Bereitstellung skalierbarer Softwaresysteme einschließlich E-Commerce- und Spendenplattformen. Automatisierung von CI/CD-Pipelines, Optimierung von Datenbankabfragen und Leistungsverbesserung durch Reduzierung der Seitenladezeiten.",
+      "skills": ["Django", "React", "PostgreSQL", "Docker", "AWS", "CI/CD"]
+    },
+    {
+      "id": "event-2",
+      "date": "Mär 2021 – Aug 2021",
+      "title": "Softwareentwickler",
+      "company": "Dekko Isho Group",
+      "location": "Dhaka, Bangladesch",
+      "type": "work",
+      "duration": "6 Monate",
+      "description": "Modernisierung der Legacy-Codebasis, Integration von Drittanbieter-APIs und Entwicklung eines Barcode-basierten Stoffverfolgungssystems, das die F&E-Effizienz um 40% steigerte.",
+      "skills": ["Django", "REST APIs", "PostgreSQL", "Drittanbieter-APIs"]
+    },
+    {
+      "id": "event-3",
+      "date": "Jul 2019 – Mär 2021",
+      "title": "Softwareentwickler",
+      "company": "Ishraak Solutions Limited",
+      "location": "Dhaka, Bangladesch",
+      "type": "work",
+      "duration": "1 Jahr 9 Monate",
+      "description": "Erstellung von Job- und Kompetenztestplattformen sowie nationalen Schulinformationssystemen. Zusammenarbeit in agilen Sprints, Unit-Testing und Arbeit an interaktiver kartenbasierter Datenanzeige.",
+      "skills": ["Django", "React", "PostgreSQL", "Agile", "Unit Testing"]
+    }
+    ]
+  },
+  "contact": {
+    "email": "saiful.abir20@gmail.com",
+    "socialLinks": {
+      "github": "https://github.com/SaifulAbir",
+      "linkedin": "https://www.linkedin.com/in/saifulislamcse",
+      "twitter": "https://twitter.com/si"
+    }
+  },
+  "ui": {
+    "nav": {
+      "about": "Über mich",
+      "skills": "Fähigkeiten",
+      "education": "Ausbildung",
+      "projects": "Projekte",
+      "timeline": "Werdegang",
+      "contact": "Kontakt"
+    },
+    "loader": { "loading": "Portfolio wird geladen..." },
+    "hero": { "greeting": "Hallo, ich bin" },
+    "about": {
+      "cta": "Lassen Sie uns gemeinsam etwas Großartiges bauen",
+      "interests": [
+        { "emoji": "☕", "title": "Kaffeeliebhaber", "desc": "Angetrieben von Koffein" },
+        { "emoji": "🎵", "title": "Musik", "desc": "Programmieren mit Beats" },
+        { "emoji": "📚", "title": "Lernen", "desc": "Immer neugierig" },
+        { "emoji": "🎮", "title": "Gaming", "desc": "Pixel-Abenteuer" }
+      ],
+      "highlights": [
+        { "title": "Backend & APIs", "description": "Python, Django, FastAPI, DRF — skalierbare Dienste & REST-APIs" },
+        { "title": "Daten & Automatisierung", "description": "ETL-Pipelines, Analyse-Dashboards, Pandas & Plotly" },
+        { "title": "DevOps & Cloud", "description": "Docker, Kubernetes, CI/CD, AWS & GitOps-Workflows" },
+        { "title": "Saubere Architektur", "description": "Systemdesign, Testbarkeit & langfristige Wartbarkeit" }
+      ]
+    },
+    "projects": {
+      "subtitle": "Entdecken Sie meine neuesten Arbeiten und kreativen Lösungen",
+      "featured": "Empfohlen",
+      "code": "Code",
+      "liveDemo": "Live-Demo"
+    },
+    "timeline": {
+      "subtitle": "Mein beruflicher Werdegang und wichtige Meilensteine",
+      "featured": "Empfohlen",
+      "current": "Aktuell"
+    },
+    "contact": {
+      "heading": "Kontakt aufnehmen",
+      "subtitle": "Lassen Sie uns zusammenarbeiten und Ihre Ideen zum Leben erwecken. Ich freue mich immer über neue Projekte und den Austausch mit anderen Entwicklern.",
+      "sendTitle": "Nachricht senden",
+      "nameLabel": "Name",
+      "namePlaceholder": "Ihr vollständiger Name",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "ihre.email@beispiel.de",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt oder sagen Sie einfach Hallo...",
+      "sendButton": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "toast": "Vielen Dank für Ihre Nachricht! Ich melde mich bald bei Ihnen.",
+      "connectTitle": "Vernetzen wir uns",
+      "connectDescription": "Ich bin immer an neuen Möglichkeiten, kreativen Projekten und innovativen Ideen interessiert. Ob Sie eine Frage haben oder einfach Hallo sagen möchten — ich werde mein Bestes tun, mich bei Ihnen zu melden!",
+      "emailLabel2": "E-Mail",
+      "locationLabel": "Standort",
+      "locationValue": "Weltweit für Remote-Arbeit verfügbar",
+      "socialTitle": "Finden Sie mich auf sozialen Plattformen"
+    },
+    "footer": {
+      "tagline": "Skalierbare Systeme & datengetriebene Lösungen entwickeln",
+      "madeWith": "Erstellt mit",
+      "coffee": "und viel Kaffee",
+      "backToTop": "Nach oben"
+    }
+  },
+  "education": {
+    "title": "Ausbildung",
+    "institutions": [
+      {
+        "degree": "Master of Science in Automotive Software Engineering",
+        "institution": "Technische Universität Chemnitz",
+        "location": "Chemnitz, Deutschland",
+        "period": "2022 - Heute",
+        "description": "Interdisziplinäres Programm mit Schwerpunkt auf eingebetteten Systemen, Fahrzeugelektronik, Steuerungssystemen und Software-Engineering für intelligente Fahrzeuge.",
+        "achievements": [
+          "Aktuelle Note: 2,3 (deutsche Notenskala)",
+          "Deutsch lernen (B1-Niveau)",
+          "Aktiver Aufbau von Projekten neben der akademischen Forschung"
+        ],
+        "gpa": "2,3/1,0"
+      },
+      {
+        "degree": "Bachelor of Science in Informatik",
+        "institution": "International University of Business Agriculture and Technology",
+        "location": "Dhaka, Bangladesch",
+        "period": "Januar 2015 - April 2019",
+        "description": "Schwerpunkt auf Softwareentwicklung, Datenstrukturen, Algorithmen, Datenbanken und verteilten Systemen mit praxisnaher Projektarbeit und Forschungskomponenten.",
+        "achievements": [
+          "Abschlussnote: 1,8 (deutsche Notenskala)"
+        ],
+        "gpa": "3,8/4,0"
+      }
+    ]
+  }
+}

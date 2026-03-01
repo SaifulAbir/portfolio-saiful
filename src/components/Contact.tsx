@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Mail, Github, Linkedin, Twitter, Send, MapPin, MessageCircle, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface ContactProps {
     data: {
@@ -23,6 +24,8 @@ interface ContactProps {
 }
 
 export function Contact({ data }: ContactProps) {
+    const { data: langData } = useLanguage();
+    const ui = langData.ui.contact;
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [toast, setToast] = useState<{ visible: boolean; message: string }>({ visible: false, message: '' });
 
@@ -37,7 +40,7 @@ export function Contact({ data }: ContactProps) {
 
         await new Promise(resolve => setTimeout(resolve, 1500));
 
-        showToast('Thank you for your message! I\'ll get back to you soon.');
+        showToast(ui.toast);
         setIsSubmitting(false);
 
         (e.target as HTMLFormElement).reset();
@@ -154,7 +157,7 @@ export function Contact({ data }: ContactProps) {
                         }}
                     >
                         <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent bg-[length:200%_auto]">
-                            Get In Touch
+                            {ui.heading}
                         </span>
                     </motion.h2>
                     <motion.div
@@ -171,7 +174,7 @@ export function Contact({ data }: ContactProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-slate-600 dark:text-slate-400 mt-6 text-lg max-w-2xl mx-auto"
                     >
-                        Let&apos;s collaborate and bring your ideas to life. I&apos;m always excited to work on new projects and connect with fellow developers.
+                        {ui.subtitle}
                     </motion.p>
                 </motion.div>
 
@@ -197,7 +200,7 @@ export function Contact({ data }: ContactProps) {
                                 <CardHeader className="relative z-10">
                                     <CardTitle className="text-2xl font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
                                         <MessageCircle className="h-6 w-6 text-indigo-600" />
-                                        Send a Message
+                                        {ui.sendTitle}
                                     </CardTitle>
                                 </CardHeader>
 
@@ -211,12 +214,12 @@ export function Contact({ data }: ContactProps) {
                                             className="grid w-full items-center gap-2"
                                         >
                                             <Label htmlFor="name" className="text-slate-700 dark:text-slate-300 font-medium">
-                                                Name
+                                                {ui.nameLabel}
                                             </Label>
                                             <Input
                                                 id="name"
                                                 type="text"
-                                                placeholder="Your full name"
+                                                placeholder={ui.namePlaceholder}
                                                 required
                                                 className="border-slate-200 dark:border-slate-700 focus:border-indigo-500 dark:focus:border-indigo-400 transition-colors bg-white/50 dark:bg-slate-900/50"
                                             />
@@ -230,12 +233,12 @@ export function Contact({ data }: ContactProps) {
                                             className="grid w-full items-center gap-2"
                                         >
                                             <Label htmlFor="email" className="text-slate-700 dark:text-slate-300 font-medium">
-                                                Email
+                                                {ui.emailLabel}
                                             </Label>
                                             <Input
                                                 id="email"
                                                 type="email"
-                                                placeholder="your.email@example.com"
+                                                placeholder={ui.emailPlaceholder}
                                                 required
                                                 className="border-slate-200 dark:border-slate-700 focus:border-indigo-500 dark:focus:border-indigo-400 transition-colors bg-white/50 dark:bg-slate-900/50"
                                             />
@@ -249,11 +252,11 @@ export function Contact({ data }: ContactProps) {
                                             className="grid w-full items-center gap-2"
                                         >
                                             <Label htmlFor="message" className="text-slate-700 dark:text-slate-300 font-medium">
-                                                Message
+                                                {ui.messageLabel}
                                             </Label>
                                             <Textarea
                                                 id="message"
-                                                placeholder="Tell me about your project or just say hello..."
+                                                placeholder={ui.messagePlaceholder}
                                                 rows={5}
                                                 required
                                                 className="border-slate-200 dark:border-slate-700 focus:border-indigo-500 dark:focus:border-indigo-400 transition-colors bg-white/50 dark:bg-slate-900/50 resize-none"
@@ -278,12 +281,12 @@ export function Contact({ data }: ContactProps) {
                                                         className="flex items-center gap-2"
                                                     >
                                                         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
-                                                        Sending...
+                                                        {ui.sending}
                                                     </motion.div>
                                                 ) : (
                                                     <div className="flex items-center gap-2">
                                                         <Send className="h-4 w-4" />
-                                                        Send Message
+                                                        {ui.sendButton}
                                                     </div>
                                                 )}
                                             </Button>
@@ -307,13 +310,13 @@ export function Contact({ data }: ContactProps) {
                                 <CardHeader className="relative z-10">
                                     <CardTitle className="text-2xl font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
                                         <Mail className="h-6 w-6 text-indigo-600" />
-                                        Let&apos;s Connect
+                                        {ui.connectTitle}
                                     </CardTitle>
                                 </CardHeader>
 
                                 <CardContent className="p-6 pt-0 relative z-10">
                                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                        I&apos;m always interested in hearing about new opportunities, creative projects, and innovative ideas. Whether you have a question or just want to say hi, I&apos;ll do my best to get back to you!
+                                        {ui.connectDescription}
                                     </p>
 
                                     <div className="space-y-4">
@@ -322,7 +325,7 @@ export function Contact({ data }: ContactProps) {
                                                 <Mail className="h-5 w-5 text-white" />
                                             </div>
                                             <div>
-                                                <p className="font-medium text-slate-800 dark:text-slate-200">Email</p>
+                                                <p className="font-medium text-slate-800 dark:text-slate-200">{ui.emailLabel2}</p>
                                                 <p className="text-sm">{data.email}</p>
                                             </div>
                                         </div>
@@ -332,8 +335,8 @@ export function Contact({ data }: ContactProps) {
                                                 <MapPin className="h-5 w-5 text-white" />
                                             </div>
                                             <div>
-                                                <p className="font-medium text-slate-800 dark:text-slate-200">Location</p>
-                                                <p className="text-sm">Available for remote work worldwide</p>
+                                                <p className="font-medium text-slate-800 dark:text-slate-200">{ui.locationLabel}</p>
+                                                <p className="text-sm">{ui.locationValue}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -351,7 +354,7 @@ export function Contact({ data }: ContactProps) {
 
                                 <CardContent className="p-6 relative z-10">
                                     <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4 text-center">
-                                        Find me on social platforms
+                                        {ui.socialTitle}
                                     </h3>
                                     <div className="grid grid-cols-2 gap-4">
                                         {socialIcons.map((social, index) => (

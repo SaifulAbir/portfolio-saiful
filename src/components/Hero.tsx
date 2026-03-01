@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface HeroProps {
   data: {
@@ -53,6 +54,7 @@ interface HeroProps {
 }
 
 export function Hero({ data }: HeroProps) {
+  const { data: langData } = useLanguage();
   const {
     name,
     description,
@@ -217,7 +219,7 @@ export function Hero({ data }: HeroProps) {
           className="font-bold text-center leading-tight text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
           variants={itemVariants}
         >
-          Hi, I&apos;m{" "}
+          {langData.ui.hero.greeting}{" "}
           <motion.span
             animate={{
               backgroundPosition: ["0%", "100%", "0%"],

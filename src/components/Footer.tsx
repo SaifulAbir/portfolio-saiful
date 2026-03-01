@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Gitlab, Heart, ArrowUp, Mail, Code } from 'lucide-react';
 import { Button } from './ui/button';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface FooterProps {
     data: {
@@ -16,6 +17,8 @@ interface FooterProps {
 }
 
 export function Footer({ data }: FooterProps) {
+    const { data: langData } = useLanguage();
+    const ui = langData.ui.footer;
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
@@ -110,7 +113,7 @@ export function Footer({ data }: FooterProps) {
                         transition={{ duration: 0.6, delay: 0.4 }}
                         className="text-slate-600 dark:text-slate-400 text-lg mb-8 max-w-md mx-auto"
                     >
-                        Building scalable systems & data-driven solutions
+                        {ui.tagline}
                     </motion.p>
 
                     {/* Social Links */}
@@ -192,7 +195,7 @@ export function Footer({ data }: FooterProps) {
                 >
                     {/* Copyright */}
                     <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-                        <span>&copy; {currentYear} Saiful Islam. Made with</span>
+                        <span>&copy; {currentYear} Saiful Islam. {ui.madeWith}</span>
                         <motion.div
                             animate={{
                                 scale: [1, 1.2, 1],
@@ -207,7 +210,7 @@ export function Footer({ data }: FooterProps) {
                         >
                             <Heart className="h-4 w-4 text-red-500 fill-current" />
                         </motion.div>
-                        <span>and lots of coffee</span>
+                        <span>{ui.coffee}</span>
                     </div>
 
                     {/* Back to top */}
@@ -222,7 +225,7 @@ export function Footer({ data }: FooterProps) {
                             className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-300"
                         >
                             <ArrowUp className="h-4 w-4 mr-2" />
-                            Back to top
+                            {ui.backToTop}
                         </Button>
                     </motion.div>
                 </motion.div>

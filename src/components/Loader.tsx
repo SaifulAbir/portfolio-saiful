@@ -2,12 +2,14 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/lib/LanguageContext';
 
 interface LoaderProps {
     isLoading: boolean;
 }
 
 export function Loader({ isLoading }: LoaderProps) {
+    const { data } = useLanguage();
 
     return (
         <AnimatePresence>
@@ -54,7 +56,7 @@ export function Loader({ isLoading }: LoaderProps) {
                             >
                                 Saiful Islam
                             </motion.h2>
-                            <p className="text-muted-foreground mt-2">Portfolio Loading...</p>
+                            <p className="text-muted-foreground mt-2">{data.ui.loader.loading}</p>
                         </motion.div>
                     </div>
                 </motion.div>

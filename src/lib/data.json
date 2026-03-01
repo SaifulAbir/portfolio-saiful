@@ -184,6 +184,70 @@
       "twitter": "https://twitter.com/si"
     }
   },
+  "ui": {
+    "nav": {
+      "about": "About",
+      "skills": "Skills",
+      "education": "Education",
+      "projects": "Projects",
+      "timeline": "Timeline",
+      "contact": "Contact"
+    },
+    "loader": { "loading": "Portfolio Loading..." },
+    "hero": { "greeting": "Hi, I'm" },
+    "about": {
+      "cta": "Let's build something amazing together",
+      "interests": [
+        { "emoji": "☕", "title": "Coffee Lover", "desc": "Fueled by caffeine" },
+        { "emoji": "🎵", "title": "Music", "desc": "Coding with beats" },
+        { "emoji": "📚", "title": "Learning", "desc": "Always curious" },
+        { "emoji": "🎮", "title": "Gaming", "desc": "Pixel adventures" }
+      ],
+      "highlights": [
+        { "title": "Backend & APIs", "description": "Python, Django, FastAPI, DRF — scalable services & REST APIs" },
+        { "title": "Data & Automation", "description": "ETL pipelines, analytics dashboards, Pandas & Plotly" },
+        { "title": "DevOps & Cloud", "description": "Docker, Kubernetes, CI/CD, AWS & GitOps workflows" },
+        { "title": "Clean Architecture", "description": "System design, testability & long-term maintainability" }
+      ]
+    },
+    "projects": {
+      "subtitle": "Explore my latest work and creative solutions",
+      "featured": "Featured",
+      "code": "Code",
+      "liveDemo": "Live Demo"
+    },
+    "timeline": {
+      "subtitle": "My professional journey and key milestones",
+      "featured": "Featured",
+      "current": "Current"
+    },
+    "contact": {
+      "heading": "Get In Touch",
+      "subtitle": "Let's collaborate and bring your ideas to life. I'm always excited to work on new projects and connect with fellow developers.",
+      "sendTitle": "Send a Message",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your full name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell me about your project or just say hello...",
+      "sendButton": "Send Message",
+      "sending": "Sending...",
+      "toast": "Thank you for your message! I'll get back to you soon.",
+      "connectTitle": "Let's Connect",
+      "connectDescription": "I'm always interested in hearing about new opportunities, creative projects, and innovative ideas. Whether you have a question or just want to say hi, I'll do my best to get back to you!",
+      "emailLabel2": "Email",
+      "locationLabel": "Location",
+      "locationValue": "Available for remote work worldwide",
+      "socialTitle": "Find me on social platforms"
+    },
+    "footer": {
+      "tagline": "Building scalable systems & data-driven solutions",
+      "madeWith": "Made with",
+      "coffee": "and lots of coffee",
+      "backToTop": "Back to top"
+    }
+  },
   "education": {
     "title": "Education",
     "institutions": [

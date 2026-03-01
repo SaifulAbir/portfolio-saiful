@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "./ui/card";
 import { Server, BarChart3, Cloud, Blocks, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 interface AboutProps {
     data: {
@@ -13,34 +14,22 @@ interface AboutProps {
 
 export function About({ data }: AboutProps) {
     const { title, bio } = data;
+    const { data: langData } = useLanguage();
+    const ui = langData.ui.about;
 
-    // Key strengths/highlights
-    const highlights = [
-        {
-            icon: Server,
-            title: "Backend & APIs",
-            description: "Python, Django, FastAPI, DRF — scalable services & REST APIs",
-            color: "from-indigo-500 to-blue-500",
-        },
-        {
-            icon: BarChart3,
-            title: "Data & Automation",
-            description: "ETL pipelines, analytics dashboards, Pandas & Plotly",
-            color: "from-purple-500 to-indigo-500",
-        },
-        {
-            icon: Cloud,
-            title: "DevOps & Cloud",
-            description: "Docker, Kubernetes, CI/CD, AWS & GitOps workflows",
-            color: "from-pink-500 to-purple-500",
-        },
-        {
-            icon: Blocks,
-            title: "Clean Architecture",
-            description: "System design, testability & long-term maintainability",
-            color: "from-amber-500 to-orange-500",
-        },
+    const iconMap = [Server, BarChart3, Cloud, Blocks];
+    const colorMap = [
+        "from-indigo-500 to-blue-500",
+        "from-purple-500 to-indigo-500",
+        "from-pink-500 to-purple-500",
+        "from-amber-500 to-orange-500",
     ];
+    const highlights = ui.highlights.map((h: { title: string; description: string }, i: number) => ({
+        icon: iconMap[i],
+        title: h.title,
+        description: h.description,
+        color: colorMap[i],
+    }));
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -189,7 +178,7 @@ export function About({ data }: AboutProps) {
                                         document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
                                     }}
                                 >
-                                    <span>Let&apos;s build something amazing together</span>
+                                    <span>{ui.cta}</span>
                                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                                 </motion.a>
                             </CardContent>
@@ -200,16 +189,7 @@ export function About({ data }: AboutProps) {
                             variants={itemVariants}
                             className="grid grid-cols-2 gap-4"
                         >
-                            {[
-                                {
-                                    emoji: "☕",
-                                    title: "Coffee Lover",
-                                    desc: "Fueled by caffeine",
-                                },
-                                { emoji: "🎵", title: "Music", desc: "Coding with beats" },
-                                { emoji: "📚", title: "Learning", desc: "Always curious" },
-                                { emoji: "🎮", title: "Gaming", desc: "Pixel adventures" },
-                            ].map((interest, index) => (
+                            {ui.interests.map((interest: { emoji: string; title: string; desc: string }, index: number) => (
                                 <motion.div
                                     key={interest.title}
                                     initial={{ opacity: 0, rotateY: -90 }}

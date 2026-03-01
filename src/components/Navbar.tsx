@@ -5,9 +5,11 @@ import { Button } from './ui/button';
 import { Moon, Sun, Menu, X, Code } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export function Navbar() {
     const { theme, setTheme } = useTheme();
+    const { locale, toggleLanguage, data } = useLanguage();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
@@ -44,13 +46,14 @@ export function Navbar() {
         return () => observers.forEach((o) => o.disconnect());
     }, []);
 
+    const nav = data.ui.nav;
     const navItems = [
-        { href: '#about', label: 'About', color: 'indigo' },
-        { href: '#skills', label: 'Skills', color: 'purple' },
-        { href: '#education', label: 'Education', color: 'pink' },
-        { href: '#projects', label: 'Projects', color: 'indigo' },
-        { href: '#timeline', label: 'Timeline', color: 'purple' },
-        { href: '#contact', label: 'Contact', color: 'pink' }
+        { href: '#about', label: nav.about, color: 'indigo' },
+        { href: '#skills', label: nav.skills, color: 'purple' },
+        { href: '#education', label: nav.education, color: 'pink' },
+        { href: '#projects', label: nav.projects, color: 'indigo' },
+        { href: '#timeline', label: nav.timeline, color: 'purple' },
+        { href: '#contact', label: nav.contact, color: 'pink' }
     ];
 
     const getGradientClass = (color: string) => {
@@ -161,6 +164,38 @@ export function Navbar() {
                                 </motion.li>
                             ))}
                         </ul>
+
+                        {/* Language Toggle */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.45 }}
+                        >
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                onClick={toggleLanguage}
+                                aria-label="Toggle language"
+                                className="hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 relative overflow-hidden group"
+                            >
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                />
+                                <AnimatePresence mode="wait" initial={false}>
+                                    <motion.span
+                                        key={locale}
+                                        initial={{ y: 10, opacity: 0 }}
+                                        animate={{ y: 0, opacity: 1 }}
+                                        exit={{ y: -10, opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                        className="relative z-10 text-xs font-bold text-slate-600 dark:text-slate-300 group-hover:text-indigo-500 transition-colors"
+                                    >
+                                        {locale === 'en' ? 'DE' : 'EN'}
+                                    </motion.span>
+                                </AnimatePresence>
+                                <span className="sr-only">Toggle language</span>
+                            </Button>
+                        </motion.div>
 
                         {/* Theme Toggle */}
                         <motion.div
